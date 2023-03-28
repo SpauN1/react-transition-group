@@ -81,3 +81,112 @@ function App() {
 }
 
 export default App;
+
+// Примеры.
+
+// №2 Charlist
+
+// function renderItems(arr) {
+//   const items = arr.map((item, i) => {
+//     let imgStyle = { objectFit: 'cover' };
+//     if (
+//       item.thumbnail ===
+//       'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg'
+//     ) {
+//       imgStyle = { objectFit: 'unset' };
+//     }
+
+//     return (
+//       <CSSTransition key={item.id} timeout={500} classNames="char__item">
+//         <li
+//           tabIndex={0}
+//           className="char__item"
+//           ref={(el) => (itemRefs.current[i] = el)}
+//           key={item.id}
+//           onClick={() => {
+//             props.onCharSelected(item.id);
+//             focusOnItem(i);
+//           }}
+//           onKeyDown={(e) => {
+//             if (e.key === ' ' || e.key === 'Enter') {
+//               props.onCharSelected(item.id);
+//               focusOnItem(i);
+//             }
+//           }}
+//         >
+//           <img src={item.thumbnail} alt={item.name} style={imgStyle} />
+//           <div className="char__name">{item.name}</div>
+//         </li>
+//       </CSSTransition>
+//     );
+//   });
+
+//   return (
+//     <ul className="char__grid">
+//       <TransitionGroup className="char__grid">{items}</TransitionGroup>
+//     </ul>
+//   );
+// }
+
+// .char__item-enter (style)
+
+// img {
+//   border-radius: 20px;
+//   width: 200px;
+//   height: 200px;
+//   object-fit: cover;
+//   transform: translate(-15px, -15px);
+// }
+// &-enter {
+//   transform: translateX(-750px) rotate(90deg);
+// }
+// &-enter-active {
+//   transform: translateX(-750px) rotate(90deg);
+//   transition: all 500ms;
+// }
+// &-enter-done {
+//   transition: all 500ms;
+// }
+// &_selected {
+//   box-shadow: 0 5px 20px $main-color;
+//   transform: translateY(-8px);
+//   transition: all 300ms;
+// }
+
+// №2 ComicsList
+
+// function renderItems(arr) {
+//   const items = arr.map((item, i) => {
+//     return (
+//       <CSSTransition key={item.id} timeout={500} classNames="comics__item">
+//         <li className="comics__item" key={i}>
+//           <Link to={`/comics/${item.id}`}>
+//             <img
+//               src={item.thumbnail}
+//               alt={item.title}
+//               className="comics__item-img"
+//             />
+//             <div className="comics__item-name">{item.title}</div>
+//             <div className="comics__item-price">{item.price}</div>
+//           </Link>
+//         </li>
+//       </CSSTransition>
+//     );
+//   });
+
+//   return <TransitionGroup className="comics__grid">{items}</TransitionGroup>;
+// }
+
+// .comics__item-enter (style)
+
+// &-enter {
+//   transform: scale(0);
+// }
+// &-enter-active {
+//   transform: scale(0);
+//   transition: all 500ms;
+// }
+// &-enter-done {
+//   transform: scale(1);
+//   transition: all 500ms;
+// }
